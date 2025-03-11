@@ -39,9 +39,9 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
    - Ideally appears random; large spikes may suggest unmodeled events or outliers.
 
 **Key Takeaway:**
-- **Strong Weekly/Monthly Seasonality:** Repeating cycles confirm a regular pattern in sales volumes.  
-- **Overall Growth Trend:** A steady upward slope, though some periods show slower growth.  
-- **Residual Spikes:** Indicate events or promotions that aren’t captured by simple trend/seasonality modeling.
+- Strong Weekly/Monthly Seasonality: Repeating cycles confirm a regular pattern in sales volumes.  
+- Overall Growth Trend: A steady upward slope, though some periods show slower growth.  
+- Residual Spikes: Indicate events or promotions that aren’t captured by simple trend/seasonality modeling.
 
 - **7-day**  
   ![image](https://github.com/user-attachments/assets/4c510fcd-8f4a-47b0-8b8e-69b8c2466506)  
@@ -59,9 +59,9 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
   - Weekly seasonality is common in retail and e-commerce (weekend vs. weekday shopping).
 
 **Key Takeaway on Model Selection:**
-- **Prophet:** Automatically handles yearly and weekly seasonality.  
-- **SARIMA / SARIMAX:** Manages one or two major seasonalities (weekly, yearly), but multiple overlapping cycles can be complex.  
-- **Tree Models (LightGBM / XGBoost):** Require feature engineering (e.g., sine/cosine transformations) to capture dominant periods.
+- Prophet: Automatically handles yearly and weekly seasonality.  
+- SARIMA / SARIMAX: Manages one or two major seasonalities (weekly, yearly), but multiple overlapping cycles can be complex.  
+- Tree Models (LightGBM / XGBoost): Require feature engineering (e.g., sine/cosine transformations) to capture dominant periods.
 
 ![image](https://github.com/user-attachments/assets/e30ec9c9-70ef-46f2-afda-751bf827a9ee)
 
