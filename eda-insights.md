@@ -43,7 +43,12 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
 - **Overall Growth Trend:** A steady upward slope, though some periods show slower growth.  
 - **Residual Spikes:** Indicate events or promotions that aren’t captured by simple trend/seasonality modeling.
 
-![image](https://github.com/user-attachments/assets/d46108e3-8060-4ab8-b177-d3a4da8d8f3a)
+- **7-day**  
+  ![image](https://github.com/user-attachments/assets/4c510fcd-8f4a-47b0-8b8e-69b8c2466506)  
+- **30-day**  
+  ![image](https://github.com/user-attachments/assets/a0e78e4d-6a05-4936-8cf5-0e7d39bcf80f)  
+- **90-day**  
+  ![image](https://github.com/user-attachments/assets/e8cb2676-bb52-4e16-aca2-4c81c54b60e6)
 
 ---
 
@@ -58,17 +63,12 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
 - **SARIMA / SARIMAX:** Manages one or two major seasonalities (weekly, yearly), but multiple overlapping cycles can be complex.  
 - **Tree Models (LightGBM / XGBoost):** Require feature engineering (e.g., sine/cosine transformations) to capture dominant periods.
 
-**Additional Visuals**  
-- **7-day**  
-  ![image](https://github.com/user-attachments/assets/4c510fcd-8f4a-47b0-8b8e-69b8c2466506)  
-- **30-day**  
-  ![image](https://github.com/user-attachments/assets/a0e78e4d-6a05-4936-8cf5-0e7d39bcf80f)  
-- **90-day**  
-  ![image](https://github.com/user-attachments/assets/e8cb2676-bb52-4e16-aca2-4c81c54b60e6)
+![image](https://github.com/user-attachments/assets/e30ec9c9-70ef-46f2-afda-751bf827a9ee)
+
 
 ---
 
-## 4. Rolling Standard Deviation & Distribution
+## 4. Variance Analysis
 
 - **Rolling Standard Deviation:**  
   - Reveals how sales volatility changes over different windows (3-day vs. 30-day).  
@@ -76,7 +76,7 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
 
 - **Sales Distribution:**  
   - Right-skewed distribution with moderate daily sales and occasional spikes.  
-  - **Log-Transformed** distribution is more symmetric, often aiding modeling.
+  - Log-Transformed distribution is more symmetric, often aiding modeling.
 
 ### Key Observations
 Sales volatility is not constant. A log transform can help stabilize variance, and capturing volatility patterns (via rolling std) may improve forecast accuracy.
@@ -130,16 +130,11 @@ Incorporating holiday or event-based features is crucial for accurate forecastin
 
 1. **Strong Weekly Seasonality:**  
    Both moving averages and FFT confirm a 7-day cycle.
-
 2. **Event & Holiday Effects:**  
-   Special events drive marked sales changes across stores.
-
+   Special events have a marked impact on sales.
 3. **Feature Redundancy:**  
-   Lagged and rolling features are useful but may overlap; careful selection or dimensionality reduction (e.g., PCA) can help.
-
-
+   Lagged and rolling features are useful but may overlap, so careful feature selection is required.
 
 These insights guide our feature engineering and model selection to improve forecasting accuracy.
-
 ---
 
