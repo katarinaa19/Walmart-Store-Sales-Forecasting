@@ -29,6 +29,20 @@ This project aims to develop predictive models to forecast sales in Walmart’s 
 
 ---
 # **💡 Key EDA Insights** 
+EDA insights guide our feature engineering and model selection, ensuring models align closely with business objectives and deliver improved forecasting accuracy.
+
+- Model Selection
+  - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
+  - SARIMA/SARIMAX: Effective for one or two dominant seasonalities (e.g., weekly, yearly) but may struggle with overlapping cycles.
+  - Tree-Based Models (LightGBM/XGBoost): Powerful for non-linear relationships; require engineered features (e.g., sine/cosine transformations) to capture cyclicality.
+  - Decomposition Approaches: Choose additive vs. multiplicative models based on whether seasonal effects remain constant or grow with the trend.
+
+- Feature Engineering
+  - Lagged & Rolling Features: Use lags (e.g., lag_7) and rolling averages/stds to capture recurring weekly patterns and volatility.
+  - Cyclical Transformations: Create sine and cosine features to represent 6–7 day cycles.
+  - Event-Based Features: Add binary flags or dummy variables for holidays and promotions to capture event-driven effects.
+  - Distribution Transformations: Apply log transformation to stabilize variance in right-skewed sales data.
+  - Weekday Patterns: Include day-of-week as a categorical variable to capture differences between weekdays and weekends.
 
 ---
 
