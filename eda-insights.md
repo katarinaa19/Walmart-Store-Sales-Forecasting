@@ -13,7 +13,7 @@ Below are the major findings from our exploratory data analysis. These insights 
   - **7-day MA** highlights weekly seasonality.  
   - **30-day MA** captures broader, monthly variations.
 
-### Key Observations
+**Key Takeaway:**
 Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or seasonal) patterns. These moving averages confirm recurring demand cycles, as well as an overall growth trend.
 
 ![image](https://github.com/user-attachments/assets/d46108e3-8060-4ab8-b177-d3a4da8d8f3a)
@@ -38,7 +38,7 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
    - What remains after removing trend and seasonality.  
    - Ideally appears random; large spikes may suggest unmodeled events or outliers.
 
-### Key Observations
+**Key Takeaway:**
 - **Strong Weekly/Monthly Seasonality:** Repeating cycles confirm a regular pattern in sales volumes.  
 - **Overall Growth Trend:** A steady upward slope, though some periods show slower growth.  
 - **Residual Spikes:** Indicate events or promotions that aren’t captured by simple trend/seasonality modeling.
@@ -78,7 +78,7 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
   - Right-skewed distribution with moderate daily sales and occasional spikes.  
   - Log-Transformed distribution is more symmetric, often aiding modeling.
 
-### Key Observations
+**Key Takeaway:**
 Sales volatility is not constant. A log transform can help stabilize variance, and capturing volatility patterns (via rolling std) may improve forecast accuracy.
 
 ![image](https://github.com/user-attachments/assets/a8a77e48-74b9-426a-a0ea-76c676e300a1)
@@ -91,7 +91,7 @@ Sales volatility is not constant. A log transform can help stabilize variance, a
   - Typically higher sales on weekends (e.g., Saturday) vs. certain weekdays (e.g., Monday).  
   - Trendlines show a gradual rise over the week.
 
-### Key Observations
+**Key Takeaway:**
 Including weekday features is essential to capture these intra-week fluctuations and plan inventory or staffing accordingly.
 
 ![image](https://github.com/user-attachments/assets/13455a61-dd30-4114-9fb2-cef1176c9c38)
@@ -105,7 +105,7 @@ Including weekday features is essential to capture these intra-week fluctuations
   - Certain lags (e.g., lag_7) and rolling means (e.g., rolling_mean_7) are strongly correlated.  
   - Some rolling std features (e.g., rolling_std_14 vs. rolling_std_30) overlap.
 
-### Key Observations
+**Key Takeaway:**
 While lagged and rolling features capture weekly patterns, too many similar features can introduce redundancy. **PCA** or careful feature selection may be necessary to avoid overfitting.
 
 ![image](https://github.com/user-attachments/assets/794800e3-d5c5-4338-af12-38c69c13a4d0)
@@ -119,7 +119,7 @@ While lagged and rolling features capture weekly patterns, too many similar feat
   - Special events or promotions can significantly shift sales.  
   - The effect varies by store, highlighting regional or demographic factors.
 
-### Key Observations
+**Key Takeaway:**
 Incorporating holiday or event-based features is crucial for accurate forecasting. Such days often create sales spikes or dips beyond normal trends.
 
 ![image](https://github.com/user-attachments/assets/54836e67-1b48-42b5-a281-e82931004bfb)
@@ -136,5 +136,6 @@ Incorporating holiday or event-based features is crucial for accurate forecastin
    Lagged and rolling features are useful but may overlap, so careful feature selection is required.
 
 These insights guide our feature engineering and model selection to improve forecasting accuracy.
+
 ---
 
