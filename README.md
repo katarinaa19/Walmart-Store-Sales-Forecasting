@@ -1,42 +1,33 @@
 # 📊 Hobbies Product Sales Forecasting for Walmart  
 
-## 📌 Overview  
-Sales patterns fluctuate across different seasons, impacting a company's profitability. Accurate sales forecasting helps businesses anticipate demand, optimize inventory, and make strategic financial decisions. Without it, companies risk overstocking, lost revenue, and missed investment opportunities.
-For Walmart, as a leading retailer, precise sales predictions are essential to:
-✅ Maintain optimal stock levels and reduce excess inventory costs.
-✅ Improve revenue forecasting for better financial planning.
-✅ Support data-driven investment and pricing strategies.
-✅ Enhance investor confidence by meeting sales targets.
+# 📌 Overview  
+
+## **Business Background**  
+Sales patterns fluctuate across different seasons, directly affecting a company's profitability. Accurate sales forecasting allows businesses to anticipate demand, optimize inventory, and make strategic financial decisions. Without it, companies risk overstocking, revenue losses, and missed investment opportunities.  
+
+For Walmart, one of the world's largest retailers, precise sales predictions are crucial for:  
+✅ Maintaining optimal stock levels and minimizing excess inventory costs  
+✅ Enhancing revenue forecasting for better financial planning  
+✅ Supporting data-driven pricing and investment strategies  
+✅ Boosting investor confidence by meeting or exceeding sales targets  
+
+## **Objective**  
+This project focuses on developing predictive models to forecast sales in Walmart’s hobbies product category for the next 27 days (from April 25, 2016, to May 21, 2016). With accurate forecasts, Walmart authorities can:  
+📦 Optimize stock management and reduce unnecessary inventory costs  
+📈 Improve revenue forecasting for better financial planning  
+💡 Make strategic investment decisions based on demand trends  
+
+## **Dataset**  
+- Data Description: This dataset contains historical sales records from 45 Walmart stores across various regions. Each store consists of multiple departments. Throughout the year, Walmart holds promotional markdown events, typically leading up to major holidays. The four most significant holidays—Super Bowl, Labor Day, Thanksgiving, and Christmas—have a greater impact on sales, with weeks containing these holidays receiving five times the weight in evaluation compared to regular weeks.
+- Key Features  
+  - Time-Series Data: Daily sales records for multiple products over several years  
+  - Store & Product Details: Information on different Walmart stores and product categories  
+  - Price Data: Historical pricing information for various products
+  - Calendar Data: Includes events, holidays, and other factors influencing sales trends  
+- Source: https://www.kaggle.com/competitions/m5-forecasting-accuracy
+  
 
 ---
-
-## 🎯 Objective  
-This project aims to **develop a predictive model** for forecasting sales in Walmart’s **hobbies product category**. With this model, Walmart authorities can:  
-
-📦 **Improve stock management** and avoid unnecessary inventory costs.  
-📈 **Enhance revenue forecasting** for better financial planning.  
-💡 **Make data-driven investment decisions** on whether to expand or scale down.  
-
----
-
-## 📂 Dataset  
-The dataset used in this project is from the **M5 Forecasting - Accuracy** competition on **Kaggle**:  
-🔗 [M5 Forecasting Accuracy Dataset](https://www.kaggle.com/competitions/m5-forecasting-accuracy)  
-
-This dataset includes:  
-- **Sales data** for Walmart stores across various states in the U.S.  
-- **Time-series data** covering several years to capture trends and seasonality.  
-- **Store and product-level details** to allow granular sales analysis.  
-- **Calendar and price data** to factor in external influences.  
-
----
-
-## 🛠️ Technologies Used  
-- **Python** 🐍  
-- **Machine Learning Libraries** (Scikit-learn, XGBoost, etc.) 🤖  
-- **Time Series Models** (ARIMA, Prophet, LSTM) ⏳  
-- **Pandas & NumPy** for data processing 📊  
-- **Matplotlib & Seaborn** for visualization 📉  
 
 ---
 
