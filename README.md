@@ -28,7 +28,9 @@ This project aims to develop predictive models to forecast sales in Walmart’s 
 - **Source**: https://www.kaggle.com/competitions/m5-forecasting-accuracy
 
 ---
-# **💡 Key EDA Insights** 
+
+# 💡 Key EDA Insights*
+
 EDA insights guide our feature engineering and model selection, ensuring models align closely with business objectives and deliver improved forecasting accuracy.
 
 - Model Selection
