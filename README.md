@@ -1,4 +1,4 @@
-# 📊 Predictive Sales Analytics for Walmart
+# 📊 Retail Sales Forecasting for Walmart’s Hobbies Category
 
 # 📌 Overview  
 
