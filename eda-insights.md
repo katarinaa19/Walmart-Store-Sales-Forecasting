@@ -1,92 +1,126 @@
 # Key EDA Insights
 
-Below are the major findings from our exploratory data analysis. These insights are drawn from various visualizations including time-series trends, moving averages, FFT analysis, distribution plots, and correlation heatmaps.
+Below are the major findings from our exploratory data analysis. These insights come from time-series plots, moving averages, FFT analysis, decomposition, rolling statistics, and correlation heatmaps.
 
 ---
 
 ## 1. Time-Series Trends & Moving Averages
 
 - **Overall Sales Trend (2011–2016):**  
-  Daily sales data show a general upward trend with noticeable fluctuations over time.
-  
-- **7-Day & 30-Day Moving Averages:**  
-  - The 7-day moving average highlights weekly seasonality.
-  - The 30-day moving average captures broader, monthly variations.
+  Daily sales show a general upward trajectory, with some notable fluctuations over time.
 
-**Key Takeaway:**  
-Walmart’s sales display both short-term (weekly) and long-term (monthly/seasonal) patterns.
+- **7-Day & 30-Day Moving Averages:**  
+  - **7-day MA** highlights weekly seasonality.  
+  - **30-day MA** captures broader, monthly variations.
+
+### Key Observations
+Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or seasonal) patterns. These moving averages confirm recurring demand cycles, as well as an overall growth trend.
 
 ![image](https://github.com/user-attachments/assets/d46108e3-8060-4ab8-b177-d3a4da8d8f3a)
 
 ---
 
-## 2. Power Spectrum Analysis (FFT)
+## 2. Time-Series Decomposition Analysis
 
-- **Dominant Cycles Identified:**  
-  - The graph reveals a distinct 6-7 day cycle, highlighting a strong weekly pattern.
-  - This cycle is very common in retail, e-commerce, and other business scenarios, often reflecting differences in weekend versus weekday behavior or recurring weekly purchasing patterns.
+1. **Original Series (Blue)**  
+   - Raw daily sales from 2011 to 2016.  
+   - Noticeable spikes often coincide with holidays, promotions, or other anomalies.
 
-**Takeaways on Model Choice:**
-- **Prophet:** Automatically models both yearly and weekly seasonality, making it a strong candidate.
-- **SARIMA / SARIMAX:** These models can handle one or two major seasonalities (such as weekly or yearly), but managing multiple overlapping cycles might be challenging.
-- **Tree Models (LightGBM / XGBoost):** Typically require feature engineering, such as creating sine/cosine transformations to capture each dominant period.
+2. **Trend Component (Red)**  
+   - Reflects the long-term movement in sales.  
+   - Overall upward slope indicates steady growth, with occasional dips or rebounds.
 
-![image](https://github.com/user-attachments/assets/f798ec41-3bf3-44ab-b0af-c83a9d05020b)
+3. **Seasonal Component (Green)**  
+   - Captures repeating cycles (e.g., weekly, annual).  
+   - Consistent peaks/troughs often align with weekends, holidays, or monthly shopping habits.
+
+4. **Residual Component (Black)**  
+   - What remains after removing trend and seasonality.  
+   - Ideally appears random; large spikes may suggest unmodeled events or outliers.
+
+### Key Observations
+- **Strong Weekly/Monthly Seasonality:** Repeating cycles confirm a regular pattern in sales volumes.  
+- **Overall Growth Trend:** A steady upward slope, though some periods show slower growth.  
+- **Residual Spikes:** Indicate events or promotions that aren’t captured by simple trend/seasonality modeling.
+
+![image](https://github.com/user-attachments/assets/d46108e3-8060-4ab8-b177-d3a4da8d8f3a)
 
 ---
 
-## 3. Rolling Standard Deviation & Distribution
+## 3. Power Spectrum Analysis (FFT)
+
+- **Dominant Cycles Identified:**  
+  - A **6–7 day** cycle highlights a strong weekly pattern.  
+  - Weekly seasonality is common in retail and e-commerce (weekend vs. weekday shopping).
+
+### Practical Implications
+- **Prophet:** Automatically handles yearly and weekly seasonality.  
+- **SARIMA / SARIMAX:** Manages one or two major seasonalities (weekly, yearly), but multiple overlapping cycles can be complex.  
+- **Tree Models (LightGBM / XGBoost):** Require feature engineering (e.g., sine/cosine transformations) to capture dominant periods.
+
+**Additional Visuals**  
+- **7-day**  
+  ![image](https://github.com/user-attachments/assets/4c510fcd-8f4a-47b0-8b8e-69b8c2466506)  
+- **30-day**  
+  ![image](https://github.com/user-attachments/assets/a0e78e4d-6a05-4936-8cf5-0e7d39bcf80f)  
+- **90-day**  
+  ![image](https://github.com/user-attachments/assets/e8cb2676-bb52-4e16-aca2-4c81c54b60e6)
+
+---
+
+## 4. Rolling Standard Deviation & Distribution
 
 - **Rolling Standard Deviation:**  
-  - Variability in daily sales changes over different windows (e.g., 3-day vs. 30-day).
-  - Periodic spikes hint at effects from promotions or holidays.
-  
-- **Sales Distribution:**  
-  - The data is right-skewed, with most days showing moderate sales and some days showing spikes.
-  - A log-transformed distribution appears more symmetric.
+  - Reveals how sales volatility changes over different windows (3-day vs. 30-day).  
+  - Periodic spikes may reflect promotions or holiday effects.
 
-**Key Takeaway:**  
-Sales volatility is not constant. A log transformation might stabilize variance and improve predictive modeling.
+- **Sales Distribution:**  
+  - Right-skewed distribution with moderate daily sales and occasional spikes.  
+  - **Log-Transformed** distribution is more symmetric, often aiding modeling.
+
+### Key Observations
+Sales volatility is not constant. A log transform can help stabilize variance, and capturing volatility patterns (via rolling std) may improve forecast accuracy.
 
 ![image](https://github.com/user-attachments/assets/a8a77e48-74b9-426a-a0ea-76c676e300a1)
 
 ---
 
-## 4. Weekday Patterns (Example: Store TX_3)
+## 5. Weekday Patterns (Store TX_3, WI_1)
 
 - **Weekly Sales Patterns:**  
-  - Higher sales are observed on weekends (e.g., Saturday) with lower sales on some weekdays (e.g., Monday).
-  - A trendline shows a gradual upward trend over the week.
-  
-**Key Takeaway:**  
-Weekday feature is needed to capture the variability.
+  - Typically higher sales on weekends (e.g., Saturday) vs. certain weekdays (e.g., Monday).  
+  - Trendlines show a gradual rise over the week.
+
+### Key Observations
+Including weekday features is essential to capture these intra-week fluctuations and plan inventory or staffing accordingly.
 
 ![image](https://github.com/user-attachments/assets/13455a61-dd30-4114-9fb2-cef1176c9c38)
-
+![image](https://github.com/user-attachments/assets/88828fb6-1a4b-4eda-a61f-09e4f9fc5815)
 
 ---
 
-## 5. Correlation Heatmap (Example: Store CA_1)
+## 6. Correlation Heatmap (Store CA_1, TX_1)
 
 - **Lag & Rolling Feature Correlations:**  
-  - Strong correlations exist between certain lagged features (e.g., lag_7) and rolling means (e.g., rolling_mean_7).
-  - Some rolling standard deviations (e.g., rolling_std_14 vs. rolling_std_30) indicate overlapping information. PCA might required if creating too much of the rolling/lagged features.
+  - Certain lags (e.g., lag_7) and rolling means (e.g., rolling_mean_7) are strongly correlated.  
+  - Some rolling std features (e.g., rolling_std_14 vs. rolling_std_30) overlap.
 
-**Key Takeaway:**  
-Lagged features and rolling statistics effectively capture the recurring weekly patterns, though some may be redundant.
+### Key Observations
+While lagged and rolling features capture weekly patterns, too many similar features can introduce redundancy. **PCA** or careful feature selection may be necessary to avoid overfitting.
 
 ![image](https://github.com/user-attachments/assets/794800e3-d5c5-4338-af12-38c69c13a4d0)
+![image](https://github.com/user-attachments/assets/e39ed5ce-f089-452c-a541-991d140127e2)
 
 ---
 
-## 6. Impact of Events on Sales
+## 7. Impact of Events on Sales
 
 - **Event vs. Non-Event Days:**  
-  - Sales differ on days with special events or promotions.
-  - The effect of events is store-dependent, reflecting localized factors.
+  - Special events or promotions can significantly shift sales.  
+  - The effect varies by store, highlighting regional or demographic factors.
 
-**Key Takeaway:**  
-Incorporating event-based features is essential to accurately forecast sales, as holidays and promotions can significantly affect performance.
+### Key Observations
+Incorporating holiday or event-based features is crucial for accurate forecasting. Such days often create sales spikes or dips beyond normal trends.
 
 ![image](https://github.com/user-attachments/assets/54836e67-1b48-42b5-a281-e82931004bfb)
 
@@ -96,10 +130,14 @@ Incorporating event-based features is essential to accurately forecast sales, as
 
 1. **Strong Weekly Seasonality:**  
    Both moving averages and FFT confirm a 7-day cycle.
+
 2. **Event & Holiday Effects:**  
-   Special events have a marked impact on sales.
+   Special events drive marked sales changes across stores.
+
 3. **Feature Redundancy:**  
-   Lagged and rolling features are useful but may overlap, so careful feature selection is required.
+   Lagged and rolling features are useful but may overlap; careful selection or dimensionality reduction (e.g., PCA) can help.
+
+
 
 These insights guide our feature engineering and model selection to improve forecasting accuracy.
 
