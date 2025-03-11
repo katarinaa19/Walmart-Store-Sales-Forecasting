@@ -58,7 +58,7 @@ Walmart’s sales exhibit both short-term (weekly) and longer-term (monthly or s
   - A **6–7 day** cycle highlights a strong weekly pattern.  
   - Weekly seasonality is common in retail and e-commerce (weekend vs. weekday shopping).
 
-### Practical Implications
+**Key Takeaway on Model Selection:**
 - **Prophet:** Automatically handles yearly and weekly seasonality.  
 - **SARIMA / SARIMAX:** Manages one or two major seasonalities (weekly, yearly), but multiple overlapping cycles can be complex.  
 - **Tree Models (LightGBM / XGBoost):** Require feature engineering (e.g., sine/cosine transformations) to capture dominant periods.
