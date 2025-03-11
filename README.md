@@ -26,9 +26,9 @@ This project aims to develop predictive models to forecast sales in Walmart’s 
   - Price Data: Historical pricing information for various products
   - Calendar Data: Includes events, holidays, and other factors influencing sales trends  
 - **Source**: https://www.kaggle.com/competitions/m5-forecasting-accuracy
-  
 
 ---
+# **💡 Key EDA Insights** 
 
 ---
 
