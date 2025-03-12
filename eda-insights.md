@@ -4,6 +4,19 @@ Below are the major findings from our exploratory data analysis. These insights 
 
 ---
 
+**📌 Table of Contents**
+
+- [1. Time-Series Trends & Moving Averages](#1-time-series-trends--moving-averages)
+- [2. Time-Series Decomposition Analysis](#2-time-series-decomposition-analysis)
+- [3. Power Spectrum Analysis (FFT)](#3-power-spectrum-analysis-fft)
+- [4. Variance Analysis](#4-variance-analysis)
+- [5. Weekday Patterns (Store TX_3, WI_1)](#5-weekday-patterns-store-tx_3-wi_1)
+- [6. Correlation Heatmap (Store CA_1, TX_1)](#6-correlation-heatmap-store-ca_1-tx_1)
+- [7. Impact of Events on Sales](#7-impact-of-events-on-sales)
+- [Overall Conclusions](#overall-conclusions)
+
+---
+
 ## 1. Time-Series Trends & Moving Averages
 
 - **Overall Sales Trend (2011–2016):**  
