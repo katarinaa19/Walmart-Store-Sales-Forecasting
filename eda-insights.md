@@ -141,12 +141,18 @@ Incorporating holiday or event-based features is crucial for accurate forecastin
 
 ## Overall Conclusions
 
-1. **Strong Weekly Seasonality:**  
-   Both moving averages and FFT confirm a 7-day cycle.
-2. **Event & Holiday Effects:**  
-   Special events have a marked impact on sales.
-3. **Feature Redundancy:**  
-   Lagged and rolling features are useful but may overlap, so careful feature selection is required.
+1. Model Selection
+  - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
+  - SARIMA/SARIMAX: Effective for one or two dominant seasonalities (e.g., weekly, yearly) but may struggle with overlapping cycles.
+  - Tree-Based Models (LightGBM/XGBoost): Powerful for non-linear relationships; require engineered features (e.g., sine/cosine transformations) to capture cyclicality.
+  - Decomposition Approaches: Choose additive vs. multiplicative models based on whether seasonal effects remain constant or grow with the trend.
+
+2. Feature Engineering
+  - Lagged & Rolling Features: Use lags (e.g., lag_7) and rolling averages/stds to capture recurring weekly patterns and volatility. Though PCA might be needed to reduce redundancy.
+  - Cyclical Transformations: Create sine and cosine features to represent 6–7 day cycles.
+  - Event-Based Features: Add binary flags or dummy variables for holidays and promotions to capture event-driven effects.
+  - Distribution Transformations: Apply log transformation to stabilize variance in right-skewed sales data.
+  - Weekday Patterns: Include day-of-week as a categorical variable to capture differences between weekdays and weekends.
 
 These insights guide our feature engineering and model selection to improve forecasting accuracy.
 
