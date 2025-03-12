@@ -12,8 +12,7 @@ For Walmart, one of the world's largest retailers, precise sales predictions are
 ✅ Boosting investor confidence by meeting or exceeding sales targets  
 
 ## **🎯Objective**  
-This project aims to develop predictive models to forecast sales in Walmart’s hobbies product category over the next 27 days (from April 25, 2016, to May 21, 2016). The approach combines time series analysis and machine learning techniques to capture trends, seasonality, and demand fluctuations.
-- By leveraging accurate sales forecasts, Walmart can:
+This project aims to develop predictive models to forecast sales in Walmart’s hobbies product category over the next 27 days (from April 25, 2016, to May 21, 2016). The approach combines time series analysis and machine learning techniques to capture trends, seasonality, and demand fluctuations. By leveraging accurate sales forecasts, Walmart can:
 - Optimize stock management to prevent overstocking and shortages
 - Enhance revenue forecasting for more precise financial planning
 - Support data-driven investment decisions based on projected demand
