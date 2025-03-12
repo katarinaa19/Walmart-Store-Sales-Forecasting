@@ -122,7 +122,7 @@ Including weekday features is essential to capture these intra-week fluctuations
 
 ---
 
-## 6. Correlation Heatmap (Store CA_1, TX_1)
+## 6. Correlation Heatmap on Rolling & Lagged Features (Store CA_1, TX_1)
 
 - **Lag & Rolling Feature Correlations:**  
   - Certain lags (e.g., lag_7) and rolling means (e.g., rolling_mean_7) are strongly correlated.  
