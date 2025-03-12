@@ -2,20 +2,13 @@
 
 # 🌟 Overview  
 
-## **📊Business Background**  
-Sales patterns fluctuate across different seasons, directly affecting a company's profitability. Accurate sales forecasting allows businesses to anticipate demand, optimize inventory, and make strategic financial decisions. Without it, companies risk overstocking, revenue losses, and missed investment opportunities.  
+## **🎯Problem Statement and Objective**  
+Sales patterns fluctuate seasonally, directly affecting profitability. Accurate forecasting helps businesses anticipate demand, manage inventory, and make strategic financial decisions. Without reliable forecasts, companies risk overstocking, revenue loss, and missed strategic opportunities. For Walmart, precise forecasting is essential to maintain optimal inventory, enhance financial planning, and support data-driven pricing and investments.
 
-For Walmart, one of the world's largest retailers, precise sales predictions are crucial for:  
-✅ Maintaining optimal stock levels and minimizing excess inventory costs  
-✅ Enhancing revenue forecasting for better financial planning  
-✅ Supporting data-driven pricing and investment strategies  
-✅ Boosting investor confidence by meeting or exceeding sales targets  
+For the project, we aim to forecast unit sales for items in Walmart's “Hobbies_1” department using a hierarchical dataset that includes daily sales, pricing, promotions, and other key features. Our primary goal is to generate accurate 28-day point forecasts (April 25, 2016, to May 22, 2016) to enhance inventory management and support strategic business decisions. The target audiences are the inventory planners, supply chain operators, and operations managers. These people rely on reliable predictions to optimize inventory levels and avoid costly stock outs or overstock situations.
 
-## **🎯Objective**  
-This project aims to develop predictive models to forecast sales in Walmart’s hobbies product category over the next 27 days (from April 25, 2016, to May 21, 2016). The approach combines time series analysis and machine learning techniques to capture trends, seasonality, and demand fluctuations. By leveraging accurate sales forecasts, Walmart can:
-- Optimize stock management to prevent overstocking and shortages
-- Enhance revenue forecasting for more precise financial planning
-- Support data-driven investment decisions based on projected demand
+## **🛠️ Methodology**  
+Our approach integrates traditional time series models such as ARIMA and SARIMAX with advanced machine learning techniques, Long Short-Term Memory (LSTM) networks, Prophet, and LightGBM. This hybrid modeling approach allows us to effectively capture both linear trends and intricate seasonal patterns within the dataset, resulting in highly accurate and actionable forecasts. The resulting predictions will be critical for strategic inventory management and resource allocation. By anticipating demand fluctuations accurately, Walmart can improve its operational efficiency and reduce waste.
 
 ## **📂Dataset**  
 - **Data Description**: This dataset contains historical sales records from 45 Walmart stores across regions. It includes detailed information on sales performance at the department and item levels, along with factors influencing demand. 
