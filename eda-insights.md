@@ -98,6 +98,15 @@ Sales volatility is not constant. A log transform can help stabilize variance, a
 
 ---
 
+## 4. Variance Stability Test
+
+**Key Takeaway:**
+The variance stability tests indicate that the original data has stable variance, as confirmed by both Bartlett’s and Levene’s tests. However, the log transformation introduces instability, as Bartlett’s test reports a significant p-value, while Levene’s test suggests otherwise. In contrast, the Box-Cox transformation effectively stabilizes variance, with both tests yielding high p-values, confirming its suitability for variance normalization. The Box-Cox lambda value of approximately 0.95 suggests minimal transformation was needed.
+
+![image](https://github.com/user-attachments/assets/c39a396e-cbe0-4665-adf0-b4808fe9d9cc)
+
+---
+
 ## 5. Weekday Patterns (Store TX_3, WI_1)
 
 - **Weekly Sales Patterns:**  
