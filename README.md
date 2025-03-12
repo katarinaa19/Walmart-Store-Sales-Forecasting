@@ -19,7 +19,7 @@ This project aims to develop predictive models to forecast sales in Walmart’s 
 - Support data-driven investment decisions based on projected demand
 
 ## **📂Dataset**  
-- **Data Description**: This dataset contains historical sales records from 45 Walmart stores across various regions. Each store consists of multiple departments. Throughout the year, Walmart holds promotional markdown events, typically leading up to major holidays. The four most significant holidays—Super Bowl, Labor Day, Thanksgiving, and Christmas—have a greater impact on sales, with weeks containing these holidays receiving five times the weight in evaluation compared to regular weeks.
+- **Data Description**: This dataset contains historical sales records from 45 Walmart stores across regions. It includes detailed information on sales performance at the department and item levels, along with factors influencing demand. 
 - **Key Features**  
   - Time-Series Data: Daily sales records for multiple products over several years  
   - Store & Product Details: Information on different Walmart stores and product categories  
