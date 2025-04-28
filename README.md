@@ -32,7 +32,7 @@ Our approach integrates traditional time series models such as ARIMA and SARIMAX
 
 
 # 💡 Key EDA Insights
-_EDA Sample:_ [EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
+_EDA Sample:_ _[EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)_
 - Model Selection
   - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
   - SARIMA/SARIMAX: Effective for one or two dominant seasonalities (e.g., weekly, yearly) but may struggle with overlapping cycles.
