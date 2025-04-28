@@ -16,7 +16,7 @@ Generate accurate 28-day point forecasts (April 25, 2016 to May 22, 2016) to sup
 - Operations Managers
 
 ## **Methodology**  
-Our approach integrates traditional time series models such as ARIMA and SARIMAX with advanced machine learning techniques, Long Short-Term Memory (LSTM) networks, Prophet, and LightGBM. This hybrid modeling approach allows us to effectively capture both linear trends and intricate seasonal patterns within the dataset, resulting in highly accurate and actionable forecasts. The resulting predictions will be critical for strategic inventory management and resource allocation. By anticipating demand fluctuations accurately, Walmart can improve its operational efficiency and reduce waste.
+Our approach integrates traditional time series models such as ARIMA and SARIMAX with advanced machine learning techniques, Prophet, and LightGBM. This hybrid modeling approach allows us to effectively capture both linear trends and intricate seasonal patterns within the dataset, resulting in highly accurate and actionable forecasts. The resulting predictions will be critical for strategic inventory management and resource allocation. By anticipating demand fluctuations accurately, Walmart can improve its operational efficiency and reduce waste.
 
 ## **Dataset**  
 - **Data Description**: This dataset contains historical sales records from 45 Walmart stores across regions. It includes detailed information on sales performance at the department and item levels, along with factors influencing demand. 
@@ -80,16 +80,16 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
 
 Final Report: Models/TS Final report (1).pdf
 
-## Model Evaluation Metrics
+### Model Evaluation Metrics
 For this project, RMSE is selected as the primary evaluation metric because it penalizes large errors more heavily, which is crucial for minimizing significant forecasting deviations that impact financial decisions.  
 MAE serves as a secondary metric to provide a stable measure of average forecasting accuracy.  
 MAPE is excluded as it becomes unreliable when sales values are close to zero.
 
-## Model Performance Highlights
+### Model Performance Highlights
 - **SARIMAX** achieved the best RMSE (246.07), making it the most effective model for minimizing large forecasting errors.
 - **Prophet** achieved the lowest MAE (178.69), indicating better average day-to-day prediction accuracy.
 
-### Summary Table
+**Summary Table**
 
 | Model       | RMSE   | MAE    | MAPE  |
 |-------------|--------|--------|-------|
@@ -98,7 +98,7 @@ MAPE is excluded as it becomes unreliable when sales values are close to zero.
 | Prophet     | 248.14 | 178.69 | 4.86% |
 | LightGBM    | 248.05 | 181.68 | 4.90% |
 
-### Key Observations
+**Key Observations**
 - **SARIMAX** handled short-term trends best, with fewer autocorrelated residuals detected by the Ljung-Box test.
 - **ETS+ARIMA** showed moderate autocorrelation and decent performance but was weaker than SARIMAX.
 - **Prophet** exhibited oversmoothing, resulting in poorer handling of short-term patterns.
