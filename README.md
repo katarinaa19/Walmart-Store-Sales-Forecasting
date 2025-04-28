@@ -1,4 +1,5 @@
 # Retail Sales Forecasting for Walmart’s Hobbies Category
+_Report: [Final Report.pdf](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/Final%20Report.pdf)_
 
 # 🌟 Overview  
 
@@ -31,16 +32,12 @@ Our approach integrates traditional time series models such as ARIMA and SARIMAX
 
 
 # 💡 Key EDA Insights
-
-EDA insights guide our feature engineering and model selection, ensuring models align closely with business objectives and deliver improved forecasting accuracy.
-Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/eda-insights.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
-
+_EDA Sample: [EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
 - Model Selection
   - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
   - SARIMA/SARIMAX: Effective for one or two dominant seasonalities (e.g., weekly, yearly) but may struggle with overlapping cycles.
   - Tree-Based Models (LightGBM/XGBoost): Powerful for non-linear relationships; require engineered features (e.g., sine/cosine transformations) to capture cyclicality.
   - Decomposition Approaches: Choose additive vs. multiplicative models based on whether seasonal effects remain constant or grow with the trend.
-
 - Feature Engineering
   - Lagged & Rolling Features: Use lags (e.g., lag_7) and rolling averages/stds to capture recurring weekly patterns and volatility.
   - Cyclical Transformations: Create sine and cosine features to represent 6–7 day cycles.
@@ -50,13 +47,15 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
  
 ---
 
-# 🔍 Models
+# 🤖 Models
 
 ### Prophet
 - Optimized via grid search and time-series cross-validation.  
 - Used Tweedie deviance loss to handle skewed, positive sales data.  
 - Final model favors many changepoints (50), low changepoint flexibility, and strong multiplicative seasonality.
-![image](https://github.com/user-attachments/assets/8a6dc530-ebe1-463f-983f-091acf4a9c3f)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/8a6dc530-ebe1-463f-983f-091acf4a9c3f" width="400"/>
+</p>
 
 ### LightGBM
 - Engineered lag features, rolling stats, price normalization, and calendar effects.  
