@@ -42,28 +42,56 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
 
 ---
 
-## 🔍 Implementation Steps  
-1️⃣ **Data Collection & Preprocessing** – Cleaning and structuring the dataset for analysis.  
-2️⃣ **Exploratory Data Analysis (EDA)** – Identifying seasonal patterns and trends.  
-3️⃣ **Feature Engineering** – Creating meaningful variables to improve model accuracy.  
-4️⃣ **Model Selection & Training** – Testing various forecasting models.  
-5️⃣ **Evaluation & Optimization** – Measuring accuracy and fine-tuning the best-performing model.  
-6️⃣ **Deployment & Insights** – Providing actionable insights for Walmart’s decision-makers.  
+# 🔍 Model Performance Summary
 
----
+| Model       | RMSE   | MAE    | MAPE  |
+|-------------|--------|--------|-------|
+| ETS+ARIMA   | 265.53 | 187.57 | 4.80% |
+| SARIMAX     | 246.07 | 187.22 | 4.91% |
+| Prophet     | 248.14 | 178.69 | 4.86% |
+| LightGBM    | 248.05 | 181.68 | 4.90% |
 
-## 🎯 Expected Outcomes  
-✅ **Accurate sales predictions** to enhance decision-making.  
-✅ **Optimized stock levels** to minimize excess inventory costs.  
-✅ **Improved revenue forecasting** for financial planning.  
-✅ **Strategic business insights** for Walmart’s leadership team.  
+### Prophet
+**Overview:**  
+Developed by Facebook (Meta), Prophet decomposes time series into trend, seasonality, and holiday effects. Robust to missing data, outliers, and strong seasonalities.
 
----
+**Modeling Strategy:**  
+Optimized via grid search and time-series cross-validation.  
+Used Tweedie deviance loss to handle skewed, positive sales data.  
+Final model favors many changepoints (50), low changepoint flexibility, and strong multiplicative seasonality.
 
-## 🚀 Future Enhancements  
-🚀 Expand the model to include **other product categories**.  
-📊 Integrate **macroeconomic factors and competitor pricing** into predictions.  
-⚡ Automate the forecasting process with **real-time data updates**.  
+![image](https://github.com/user-attachments/assets/8a6dc530-ebe1-463f-983f-091acf4a9c3f)
 
----
+### LightGBM
+**Overview:**  
+A tree-based model using histogram-based learning for fast training. Captures nonlinear interactions among promotions, prices, holidays, and past sales — ideal for large, item-level sales datasets.
 
+**Modeling Strategy:**  
+Engineered lag features, rolling stats, price normalization, and calendar effects.  
+Optimized hyperparameters via Bayesian Optimization.  
+Adopted recursive forecasting with dynamic feature updating to adapt to new trends.
+
+![image](https://github.com/user-attachments/assets/86fb80c6-89b3-438e-ac86-fc54b70f8a0e)
+
+### SARIMAX
+**Overview:**  
+Extends ARIMA by modeling seasonality and incorporating exogenous factors like weekends, lagged sales (`Sales_lag7`), and rolling means (`Sales_rolling_mean_7`). Especially effective for datasets with weekly seasonality (`S=7`).
+
+**Modeling Strategy:**  
+Trained with seasonal orders and external regressors to improve predictive accuracy and capture recurring sales fluctuations.
+
+![image](https://github.com/user-attachments/assets/65d8d0b5-1e72-4131-ac77-e26878562254)
+
+### ETS + ARIMA
+**Overview:**  
+A two-stage approach where ETS captures level, trend, and seasonality, while ARIMA models residual autocorrelation for finer adjustments. Suitable for series with both systematic seasonal patterns and subtle dependencies.
+
+**Modeling Strategy:**  
+First fit ETS to remove primary structure, then fit ARIMA on residuals to capture remaining patterns.
+
+![Uploading image.png…]()
+
+
+
+
+ 
