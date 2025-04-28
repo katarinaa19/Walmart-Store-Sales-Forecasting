@@ -10,10 +10,10 @@ Below are the major findings from our exploratory data analysis. These insights 
 - [2. Time-Series Decomposition Analysis](#2-time-series-decomposition-analysis)
 - [3. Power Spectrum Analysis (FFT)](#3-power-spectrum-analysis-fft)
 - [4. Variance Analysis](#4-variance-analysis)
-- [4. Variance Analysis](#4-variance-analysis)
-- [5. Weekday Patterns (Store TX_3, WI_1)](#5-weekday-patterns-store-tx_3-wi_1)
-- [6. Correlation Heatmap (Store CA_1, TX_1)](#6-correlation-heatmap-store-ca_1-tx_1)
-- [7. Impact of Events on Sales](#7-impact-of-events-on-sales)
+- [5. Variance Analysis](#5-variance-analysis)
+- [6. Weekday Patterns (Store TX_3, WI_1)](#6-weekday-patterns-store-tx_3-wi_1)
+- [7. Correlation Heatmap (Store CA_1, TX_1)](#7-correlation-heatmap-store-ca_1-tx_1)
+- [8. Impact of Events on Sales](#8-impact-of-events-on-sales)
 - [Overall Conclusions](#overall-conclusions)
 
 ---
@@ -108,7 +108,7 @@ The variance stability tests indicate that the original data has stable variance
 
 ---
 
-## 5. Weekday Patterns (Store TX_3, WI_1)
+## 6. Weekday Patterns (Store TX_3, WI_1)
 
 - **Weekly Sales Patterns:**  
   - Typically higher sales on weekends (e.g., Saturday) vs. certain weekdays (e.g., Monday).  
@@ -122,7 +122,7 @@ Including weekday features is essential to capture these intra-week fluctuations
 
 ---
 
-## 6. Correlation Heatmap on Rolling & Lagged Features (Store CA_1, TX_1)
+## 7. Correlation Heatmap on Rolling & Lagged Features (Store CA_1, TX_1)
 
 - **Lag & Rolling Feature Correlations:**  
   - Certain lags (e.g., lag_7) and rolling means (e.g., rolling_mean_7) are strongly correlated.  
@@ -136,7 +136,7 @@ While lagged and rolling features capture weekly patterns, too many similar feat
 
 ---
 
-## 7. Impact of Events on Sales
+## 8. Impact of Events on Sales
 
 - **Event vs. Non-Event Days:**  
   - Special events or promotions can significantly shift sales.  
