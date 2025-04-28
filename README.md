@@ -47,10 +47,49 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
   - Event-Based Features: Add binary flags or dummy variables for holidays and promotions to capture event-driven effects.
   - Distribution Transformations: Apply log transformation to stabilize variance in right-skewed sales data.
   - Weekday Patterns: Include day-of-week as a categorical variable to capture differences between weekdays and weekends.
+ 
+---
+
+# 🔍 Models
+
+### Prophet
+- Optimized via grid search and time-series cross-validation.  
+- Used Tweedie deviance loss to handle skewed, positive sales data.  
+- Final model favors many changepoints (50), low changepoint flexibility, and strong multiplicative seasonality.
+![image](https://github.com/user-attachments/assets/8a6dc530-ebe1-463f-983f-091acf4a9c3f)
+
+### LightGBM
+- Engineered lag features, rolling stats, price normalization, and calendar effects.  
+- Optimized hyperparameters via Bayesian Optimization.  
+- Adopted recursive forecasting with dynamic feature updating to adapt to new trends.
+![image](https://github.com/user-attachments/assets/86fb80c6-89b3-438e-ac86-fc54b70f8a0e)
+
+### SARIMAX
+- Incorporate exogenous factors like weekends, lagged sales (`Sales_lag7`), and rolling means (`Sales_rolling_mean_7`).
+- Trained with seasonal orders and external regressors to improve predictive accuracy and capture recurring sales fluctuations.
+![image](https://github.com/user-attachments/assets/65d8d0b5-1e72-4131-ac77-e26878562254)
+
+### ETS + ARIMA 
+- A two-stage approach where ETS captures level, trend, and seasonality, while ARIMA models residual autocorrelation for finer adjustments. Suitable for series with both systematic seasonal patterns and subtle dependencies.
+- First fit ETS to remove primary structure, then fit ARIMA on residuals to capture remaining patterns.
+![image](https://github.com/user-attachments/assets/7dcefabf-f248-45ef-befb-8101a985f24e)
 
 ---
 
 # 🔍 Model Performance Summary
+
+Final Report: Models/TS Final report (1).pdf
+
+## Model Evaluation Metrics
+For this project, RMSE is selected as the primary evaluation metric because it penalizes large errors more heavily, which is crucial for minimizing significant forecasting deviations that impact financial decisions.  
+MAE serves as a secondary metric to provide a stable measure of average forecasting accuracy.  
+MAPE is excluded as it becomes unreliable when sales values are close to zero.
+
+## Model Performance Highlights
+- **SARIMAX** achieved the best RMSE (246.07), making it the most effective model for minimizing large forecasting errors.
+- **Prophet** achieved the lowest MAE (178.69), indicating better average day-to-day prediction accuracy.
+
+### Summary Table
 
 | Model       | RMSE   | MAE    | MAPE  |
 |-------------|--------|--------|-------|
@@ -59,45 +98,17 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
 | Prophet     | 248.14 | 178.69 | 4.86% |
 | LightGBM    | 248.05 | 181.68 | 4.90% |
 
-### Prophet
-**Overview:**  
-Developed by Facebook (Meta), Prophet decomposes time series into trend, seasonality, and holiday effects. Robust to missing data, outliers, and strong seasonalities.
+### Key Observations
+- **SARIMAX** handled short-term trends best, with fewer autocorrelated residuals detected by the Ljung-Box test.
+- **ETS+ARIMA** showed moderate autocorrelation and decent performance but was weaker than SARIMAX.
+- **Prophet** exhibited oversmoothing, resulting in poorer handling of short-term patterns.
+- **LightGBM** was not subjected to residual autocorrelation tests due to its non-linear, non-parametric nature.
 
-**Modeling Strategy:**  
-Optimized via grid search and time-series cross-validation.  
-Used Tweedie deviance loss to handle skewed, positive sales data.  
-Final model favors many changepoints (50), low changepoint flexibility, and strong multiplicative seasonality.
+**Conclusion:**  
+SARIMAX is the most reliable model for short-term sales forecasting in this project. Incorporating additional exogenous variables (e.g., promotions, holidays) could further improve its long-term forecasting ability.
 
-![image](https://github.com/user-attachments/assets/8a6dc530-ebe1-463f-983f-091acf4a9c3f)
 
-### LightGBM
-**Overview:**  
-A tree-based model using histogram-based learning for fast training. Captures nonlinear interactions among promotions, prices, holidays, and past sales — ideal for large, item-level sales datasets.
 
-**Modeling Strategy:**  
-Engineered lag features, rolling stats, price normalization, and calendar effects.  
-Optimized hyperparameters via Bayesian Optimization.  
-Adopted recursive forecasting with dynamic feature updating to adapt to new trends.
-
-![image](https://github.com/user-attachments/assets/86fb80c6-89b3-438e-ac86-fc54b70f8a0e)
-
-### SARIMAX
-**Overview:**  
-Extends ARIMA by modeling seasonality and incorporating exogenous factors like weekends, lagged sales (`Sales_lag7`), and rolling means (`Sales_rolling_mean_7`). Especially effective for datasets with weekly seasonality (`S=7`).
-
-**Modeling Strategy:**  
-Trained with seasonal orders and external regressors to improve predictive accuracy and capture recurring sales fluctuations.
-
-![image](https://github.com/user-attachments/assets/65d8d0b5-1e72-4131-ac77-e26878562254)
-
-### ETS + ARIMA
-**Overview:**  
-A two-stage approach where ETS captures level, trend, and seasonality, while ARIMA models residual autocorrelation for finer adjustments. Suitable for series with both systematic seasonal patterns and subtle dependencies.
-
-**Modeling Strategy:**  
-First fit ETS to remove primary structure, then fit ARIMA on residuals to capture remaining patterns.
-
-![Uploading image.png…]()
 
 
 
