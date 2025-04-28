@@ -32,7 +32,7 @@ Our approach integrates traditional time series models such as ARIMA and SARIMAX
 
 
 # 💡 Key EDA Insights
-_EDA Sample: [EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
+_EDA Sample:_ [EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
 - Model Selection
   - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
   - SARIMA/SARIMAX: Effective for one or two dominant seasonalities (e.g., weekly, yearly) but may struggle with overlapping cycles.
@@ -61,18 +61,23 @@ _EDA Sample: [EDA/eda-insight.md](https://github.com/katarinaa19/Walmart-Store-S
 - Engineered lag features, rolling stats, price normalization, and calendar effects.  
 - Optimized hyperparameters via Bayesian Optimization.  
 - Adopted recursive forecasting with dynamic feature updating to adapt to new trends.
-![image](https://github.com/user-attachments/assets/86fb80c6-89b3-438e-ac86-fc54b70f8a0e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/86fb80c6-89b3-438e-ac86-fc54b70f8a0e" width="400"/>
+</p>
 
 ### SARIMAX
 - Incorporate exogenous factors like weekends, lagged sales (`Sales_lag7`), and rolling means (`Sales_rolling_mean_7`).
 - Trained with seasonal orders and external regressors to improve predictive accuracy and capture recurring sales fluctuations.
-![image](https://github.com/user-attachments/assets/cd6ec31b-b426-402f-86a4-00ea3955d873)
-
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/cd6ec31b-b426-402f-86a4-00ea3955d873" width="400"/>
+</p>
 
 ### ETS + ARIMA 
 - A two-stage approach where ETS captures level, trend, and seasonality, while ARIMA models residual autocorrelation for finer adjustments. Suitable for series with both systematic seasonal patterns and subtle dependencies.
 - First fit ETS to remove primary structure, then fit ARIMA on residuals to capture remaining patterns.
-![image](https://github.com/user-attachments/assets/7dcefabf-f248-45ef-befb-8101a985f24e)
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/7dcefabf-f248-45ef-befb-8101a985f24e" width="400"/>
+</p>
 
 ---
 
