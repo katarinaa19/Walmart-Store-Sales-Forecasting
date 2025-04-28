@@ -3,9 +3,17 @@
 # 🌟 Overview  
 
 ## **Problem Statement and Objective**  
-- Sales patterns fluctuate seasonally, directly affecting profitability. Accurate forecasting helps businesses anticipate demand, manage inventory, and make strategic financial decisions. Without reliable forecasts, companies risk overstocking, revenue loss, and missed strategic opportunities. For Walmart, precise forecasting is essential to maintain optimal inventory, enhance financial planning, and support data-driven pricing and investments.
+Accurate forecasting is critical for Walmart to maintain optimal inventory, enhance financial planning, and support strategic investments. Without reliable forecasts, businesses risk overstocking, revenue loss, and missed strategic opportunities.
 
-- For the project, we aim to forecast unit sales for items in Walmart's “Hobbies_1” department using a hierarchical dataset that includes daily sales, pricing, promotions, and other key features. Our primary goal is to generate accurate 28-day point forecasts (April 25, 2016, to May 22, 2016) to enhance inventory management and support strategic business decisions. The target audiences are the inventory planners, supply chain operators, and operations managers. These people rely on reliable predictions to optimize inventory levels and avoid costly stock outs or overstock situations.
+For this project, we forecast unit sales for items in Walmart's “Hobbies_1” department using a hierarchical dataset that includes daily sales, pricing, promotions, and event calendars.
+
+**Objective:**  
+Generate accurate 28-day point forecasts (April 25, 2016 to May 22, 2016) to support inventory and supply chain decisions.
+
+**Target Audiences:**  
+- Inventory Planners  
+- Supply Chain Operators  
+- Operations Managers
 
 ## **Methodology**  
 Our approach integrates traditional time series models such as ARIMA and SARIMAX with advanced machine learning techniques, Long Short-Term Memory (LSTM) networks, Prophet, and LightGBM. This hybrid modeling approach allows us to effectively capture both linear trends and intricate seasonal patterns within the dataset, resulting in highly accurate and actionable forecasts. The resulting predictions will be critical for strategic inventory management and resource allocation. By anticipating demand fluctuations accurately, Walmart can improve its operational efficiency and reduce waste.
