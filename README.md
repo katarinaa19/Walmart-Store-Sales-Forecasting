@@ -67,7 +67,8 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
 ### SARIMAX
 - Incorporate exogenous factors like weekends, lagged sales (`Sales_lag7`), and rolling means (`Sales_rolling_mean_7`).
 - Trained with seasonal orders and external regressors to improve predictive accuracy and capture recurring sales fluctuations.
-![image](https://github.com/user-attachments/assets/65d8d0b5-1e72-4131-ac77-e26878562254)
+![image](https://github.com/user-attachments/assets/cd6ec31b-b426-402f-86a4-00ea3955d873)
+
 
 ### ETS + ARIMA 
 - A two-stage approach where ETS captures level, trend, and seasonality, while ARIMA models residual autocorrelation for finer adjustments. Suitable for series with both systematic seasonal patterns and subtle dependencies.
@@ -77,8 +78,6 @@ Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-F
 ---
 
 # 🔍 Model Performance Summary
-
-Final Report: Models/TS Final report (1).pdf
 
 ### Model Evaluation Metrics
 For this project, RMSE is selected as the primary evaluation metric because it penalizes large errors more heavily, which is crucial for minimizing significant forecasting deviations that impact financial decisions.  
