@@ -25,7 +25,7 @@ Our approach integrates traditional time series models such as ARIMA and SARIMAX
 # 💡 Key EDA Insights
 
 EDA insights guide our feature engineering and model selection, ensuring models align closely with business objectives and deliver improved forecasting accuracy.
-Here is the sample of EDA: https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/eda-insights.md
+Here is the sample of EDA: [https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/eda-insights.md](https://github.com/katarinaa19/Walmart-Store-Sales-Forecasting/blob/main/EDA/eda-insight.md)
 
 - Model Selection
   - Prophet: Automatically models weekly and yearly seasonality; ideal for strong weekly cycles and holiday effects.
